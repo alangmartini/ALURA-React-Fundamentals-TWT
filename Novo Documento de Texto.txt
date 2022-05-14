@@ -1,0 +1,4 @@
+Description
+Still having several dificulties with Hooks and Set States. Think the most im having an issue is with TypeScripting declarations. I can see they make de debugging and maintenacen job much easier, but also makes me declare a ton of stuff I do not have a proper grasp.
+
+Right now studying few TS books and trying to fill that gap.
