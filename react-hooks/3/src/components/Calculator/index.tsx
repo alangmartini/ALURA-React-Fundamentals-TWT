@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ITemperature from "../../types/temperatura";
 import BoilingWater from "./BoilingWater";
+import Temp from "./Temp";
 import TempCelsius from "./TempCelsius";
 import TempFahr from "./TempFahr";
 
@@ -15,21 +16,23 @@ export default function Calculator(){
     temperature: 0
   })
 
+  let [temp, setTemp] = useState<ITemperature>({
+    temperature: 0,
+    type: 'c'
+  })
 
     return(
       <div className="Inputs">
-        <TempCelsius 
-        setCelsiusTemp={setCelsiusTemp}
-        celsiusTemp={celsiusTemp}
-        setFahrTemp={setFahrTemp}
-        scale={'Celsius'}
+        <Temp
+        scale = 'c'
+        setTemp={setTemp}
+        temp={temp}
         />
-        <TempFahr
-        setCelsiusTemp={setCelsiusTemp}
-        fahrTemp={fahrTemp}
-        setFahrTemp={setFahrTemp}
-        scale={'Fahreinheit'}
-         />
+        <Temp
+          scale='f'
+          setTemp={setTemp}
+          temp={temp}
+        />
       </div>
     )
 }

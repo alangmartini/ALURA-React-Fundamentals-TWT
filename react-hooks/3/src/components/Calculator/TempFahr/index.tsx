@@ -30,8 +30,9 @@ export default function TempFahr({ setFahrTemp, setCelsiusTemp, scale,  fahrTemp
                     value={fahrTemp.temperature}
                     onChange={((e) => { // this doesnt work cuz setFahrTEmpo is setting a new state
                         // while setCelsiuTemp is getting an already existing temp, and not the new one.
-                        setFahrTemp({ temperature: parseFloat(e.target.value) })
-                        setCelsiusTemp({ temperature: fahrToCelsius(parseFloat(e.target.value))})
+                        //setFahrTemp({ temperature: parseFloat(e.target.value) })
+                        //setCelsiusTemp({ temperature: fahrToCelsius(parseFloat(e.target.value))})
+
                     })
                     } />
                 <BoilingWater

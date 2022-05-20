@@ -26,7 +26,8 @@ function selecionaTarefa(itemSelecionado: IInfos){
       <Formulario 
       setNames={setNames}
      />
-      <Lista 
+      <Lista
+        setNames={setNames}
         names={names}
         selecionaTarefa={selecionaTarefa}
         />

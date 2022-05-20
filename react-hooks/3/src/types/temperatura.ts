@@ -1,3 +1,4 @@
 export default interface ITemperature {
-    temperature: number
+    temperature: number;
+    type?: string
 }

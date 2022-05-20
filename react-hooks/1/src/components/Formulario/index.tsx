@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import IInfos from "../../types/Infos";
 import {v4 as uuidv4} from 'uuid';
-export default function Formulario(props: any){
+export default function Formulario({setNames}: {
+    setNames: React.Dispatch<React.SetStateAction<IInfos[]>>
+}){
 
     let [inputContent, setInputContent] = useState(
         {
@@ -12,26 +14,22 @@ export default function Formulario(props: any){
 )
 
     return(
-// if is written props, it will get the property from the parent component. simply as that.
         <form 
         onSubmit={(e) => {
-            
             e.preventDefault()
-            // this communicates with State in app.tsx. Thus prevValue (to get the previous objects of the Array) plus the object to insert from here.
-            props.setNames( (prevValue: IInfos[]) => 
+            setNames( (prevValue: IInfos[]) => 
             [
                 ...prevValue, 
                 {
                 ...inputContent, //a spread is necessary because inputContent is a Object, and we are inserting new itens inside de object
                 Selecionado: false,
                 Completado: false,
-                Id: uuidv4() //we are insertind a ID  so we can know which LI is being selected
+                Id: uuidv4() //we are inserting a ID  so we can know which LI is being selected
                 }
             
             ])
-                
-            
-            
+
+            // on submit, after we updated our props, we return the value to empty
             setInputContent({
                 Model: '',
                 Licenseplate: '',
